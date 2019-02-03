@@ -1,13 +1,10 @@
 <template>
   <v-toolbar fixed dark  class="cyan">
     <v-toolbar-title class="mr-4">
-      <span class="home" flat dark @click="navigateTo('/')">Schedule Parser</span>
+      <span class="home" flat dark @click="navigateTo('/')">Schedule Maker</span>
       </v-toolbar-title>
-
+    <v-toolbar-items><v-btn flat dark router to="songs">Browse</v-btn></v-toolbar-items>
     <v-spacer></v-spacer>
-    <v-toolbar-items><v-btn v-if="!$store.state.isUserLoggedIn" flat dark router to="login">Login</v-btn></v-toolbar-items>
-    <v-toolbar-items><v-btn v-if="!$store.state.isUserLoggedIn" flat dark router to="register">SIGN UP</v-btn></v-toolbar-items>
-    <v-toolbar-items><v-btn v-if="$store.state.isUserLoggedIn" flat dark @click="logout" >Log Out</v-btn></v-toolbar-items>
   </v-toolbar>
 </template>
 
