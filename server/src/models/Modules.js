@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     })
 
     Modules.associate = function (models) {
+        Modules.hasMany(models.UserModules, { as: 'isMyModule' })
     }
 
     return Modules
