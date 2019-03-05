@@ -1,36 +1,45 @@
 <template>
-  <v-card>
-    <v-card-title>
-      <v-toolbar-title>Modules</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-text-field
-        v-model="search"
-        append-icon="search"
-        label="Search"
-        single-line
-        hide-details
-      ></v-text-field>
-    </v-card-title>
-    <v-data-table
-      :headers="headers"
-      :items="modules"
-      :search="search"
-    >
-      <template slot="items" slot-scope="props">
-        <td hide-details ><v-flex xs12 sm3><v-btn flat icon color="red"><v-icon>delete_outline</v-icon></v-btn></v-flex></td>
-        <td class="text-xs-right">{{ props.item.moduleID }}</td>
-        <td class="text-xs-right">{{ props.item.moduleName }}</td>
-        <td class="text-xs-right">{{ props.item.moduleSemesterOffered }}</td>
-        <td class="text-xs-right">{{ props.item.moduleECTS }}</td>
-        <td class="text-xs-right">{{ props.item.moduleDepartment }}</td>
-        <td class="text-xs-right">{{ props.item.moduleLocation }}</td>
+  <v-container grid-list-md text-xs-center>
+    <v-layout row wrap>
+      <v-flex mt-5  xs12>
 
-      </template>
-      <v-alert slot="no-results" :value="true" color="error" icon="warning">
-        Your search for "{{ search }}" found no results.
-      </v-alert>
-    </v-data-table>
-  </v-card>
+          <v-card>
+            <v-card-title>
+              <v-toolbar-title>Modules</v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-text-field
+                v-model="search"
+                append-icon="search"
+                label="Search"
+                single-line
+                hide-details
+              ></v-text-field>
+            </v-card-title>
+            <v-data-table
+              :headers="headers"
+              :items="modules"
+              :search="search"
+            >
+              <template slot="items" slot-scope="props">
+                <td hide-details >
+                  <v-flex xs12 sm3><v-btn @click="removeCourse(props.item.id)" flat icon color="red"><v-icon>delete</v-icon></v-btn></v-flex>
+                </td>
+                <td class="text-xs-right">{{ props.item.moduleID }}</td>
+                <td class="text-xs-right">{{ props.item.moduleName }}</td>
+                <td class="text-xs-right">{{ props.item.moduleSemesterOffered }}</td>
+                <td class="text-xs-right">{{ props.item.moduleECTS }}</td>
+                <td class="text-xs-right">{{ props.item.moduleDepartment }}</td>
+                <td class="text-xs-right">{{ props.item.moduleLocation }}</td>
+
+              </template>
+              <v-alert slot="no-results" :value="true" color="error" icon="warning">
+                Your search for "{{ search }}" found no results.
+              </v-alert>
+            </v-data-table>
+          </v-card>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
@@ -65,6 +74,16 @@
     async mounted() {
       // request the backend for all the songs
       this.modules = (await UserModulesService.index()).data
+    },
+    methods: {
+      async removeCourse (id) {
+        try {
+          await UserModulesService.delete(id)
+          this.modules = (await UserModulesService.index()).data
+        } catch (err) {
+          console.log(err)
+        }
+      }
     }
   }
 </script>

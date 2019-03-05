@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Modules from '@/components/Modules'
 import UserModules from '@/components/UserModules'
+import Calendar from '@/components/Calendar'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/mymodules',
       name: 'mymodules',
       component: UserModules
+    },
+    {
+      path: '/calendar',
+      name: 'calendar',
+      component: Calendar
     },
     {
       path: '*',

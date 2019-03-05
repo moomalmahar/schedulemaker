@@ -5,18 +5,18 @@ let timetable = []; //stores refined timetable ready to be inserted in DB
 function convertPDF2JSON(objdata) {
 
     pages = objdata.formImage.Pages;
-    for (var p = 0; p < pages.length; p++) { // iterates each page
+    for (let p = 0; p < pages.length; p++) { // iterates each page
 
-        var lines = removeDuplicates(pages[p].VLines); //pdf2Json does not represent PDF line as it is, so remove duplicate lines
-        var daysInWeek = getNumberOfWeekDays(lines);    //finds number of days by detecting vertical lines with estimated length
-        var dayCounter = 0; //store that how many days of week a single calendar page holds
-        var lineHeight; //height of line in a single day in calendar page
-        var lineDistance; // distance between vertical lines
-        var exactLineDistance; //
-        var xStartPosition = lines[0].x; // first occurance of a verticle line in the page
+        let lines = removeDuplicates(pages[p].VLines); //pdf2Json does not represent PDF line as it is, so remove duplicate lines
+        let daysInWeek = getNumberOfWeekDays(lines);    //finds number of days by detecting vertical lines with estimated length
+        let dayCounter = 0; //store that how many days of week a single calendar page holds
+        let lineHeight; //height of line in a single day in calendar page
+        let lineDistance; // distance between vertical lines
+        let exactLineDistance; //
+        let xStartPosition = lines[0].x; // first occurance of a verticle line in the page
 
         //loop to detect vertical line height and distance in single day of a page
-        for (var i = 50; i < 100; i++) {
+        for (let i = 50; i < 100; i++) {
             if (lines[i].l > 4) { // normally a line height should be greater than 4 to be considered a day
                 lineHeight = lines[i].l;
                 lineDistance = ((lines[i + 1].x + 0.1 - lines[i].x).toFixed(2)); // distance between two adjecent vertical line and adds 0.1 to be compared with other lines
@@ -28,18 +28,18 @@ function convertPDF2JSON(objdata) {
 
         //detect where vertical lines has gap greater than lineDistance variable, the gap will represent a class
 
-        for (var w = 0; w < lines.length - 1; w++) {
+        for (let w = 0; w < lines.length - 1; w++) {
 
             if ((lines[w].x - lines[w + 1].x) > 40)
                 dayCounter++;
 
 
             if (!(lines[w].x == xStartPosition)) { //the first vertical line belongs to days name such as Mo, Di, and Mi
-                var classLineIntervels = lines[w + 1].x - lines[w].x;
+                let classLineIntervels = lines[w + 1].x - lines[w].x;
                 if (classLineIntervels <= lineDistance) {
                 } else { //find distance of current line against next line in loop and compare with standard distance
-                    var durationInMinutes = ( classLineIntervels / exactLineDistance * 15);
-                    var startTime = 0, endTime = 0;
+                    let durationInMinutes = ( classLineIntervels / exactLineDistance * 15);
+                    let startTime = 0, endTime = 0;
                     if ((lines[w].x - lines[1].x) > 0.3) {
                         startTime = ( ( ((lines[w].x - lines[1].x) / exactLineDistance) * 15 ) + (8.25 * 60));
 
@@ -48,16 +48,16 @@ function convertPDF2JSON(objdata) {
                         startTime = (8.25 * 60);
                     }
                     //console.log("start: " + Number(startTime/60) + " : endTime: " + Number( (durationInMinutes + startTime)) + ":" + ((startTime + endTime) % 60) );
-                    var tempDate = new Date(null); tempDate.setMinutes(Math.round(startTime));
+                    let tempDate = new Date(null); tempDate.setMinutes(Math.round(startTime));
                     startTime = tempDate.toISOString().substr(11,8);
 
                     tempDate.setMinutes(Math.round(durationInMinutes));
                     endTime = tempDate.toISOString().substr(11,8);
 
 
-                    for (var s = 0, t = getCalWeeks(pages[p].Texts); s < t.length; s++) {
-                        var date = getDateOfISOWeek(Number(t[s]), getYear(pages[p].Texts));
-                        var classDetail = getClassDetails(pages[p].Texts, lines[w].x, Number(lines[w].x + classLineIntervels), lines[w].y, Number(lines[w].y + lineHeight));
+                    for (let s = 0, t = getCalWeeks(pages[p].Texts); s < t.length; s++) {
+                        let date = getDateOfISOWeek(Number(t[s]), getYear(pages[p].Texts));
+                        let classDetail = getClassDetails(pages[p].Texts, lines[w].x, Number(lines[w].x + classLineIntervels), lines[w].y, Number(lines[w].y + lineHeight));
 
 
 
@@ -98,19 +98,19 @@ function compare(a, b) {
 
 // "pdf2json" Github project parses somelines twice or three times, there for removeDuplicates method is used to delete duplicate lines
 function removeDuplicates(vLines) { //receives Vlines
-    var arrResult = [];
-    var nonDuplicatedArray = [];
+    let arrResult = [];
+    let nonDuplicatedArray = [];
     for ( i = 0, n = vLines.length; i < n; i++) {
-        var item = vLines[i];
+        let item = vLines[i];
         arrResult[item.x + " - " + item.y] = item; // create associative array
     }
 
-    var j = 0;
-    for (var item in arrResult) {
+    let j = 0;
+    for (let item in arrResult) {
 
         nonDuplicatedArray[j++] = arrResult[item]; // copy the objects that are now unique
     }
-    for(var i = nonDuplicatedArray.length -1;i>=0;i--){
+    for(let i = nonDuplicatedArray.length -1;i>=0;i--){
         if(nonDuplicatedArray[i].l < 2){
             nonDuplicatedArray.splice(i,1);
         }
@@ -123,11 +123,11 @@ function removeDuplicates(vLines) { //receives Vlines
 //console.log(unescape(objdata.formImage.Pages[0].Texts));
 // in every page of calendar there is a week number written, the getCalWeeks methods finds that number and convert than in date
 function getCalWeeks(txt){
-    var weeks = [];
-    var extTxt;
-    var rawWeeksTxt;
+    let weeks = [];
+    let extTxt;
+    let rawWeeksTxt;
 
-    for(var i=0, n= txt.length; i< n-1;i++){
+    for(let i=0, n= txt.length; i< n-1;i++){
         if((txt[i].y > 1) && (txt[i].y < 2)){
             if(txt[i].R[0].T != null)
                 extTxt += txt[i].R[0].T;
@@ -138,15 +138,15 @@ function getCalWeeks(txt){
         (extTxt.indexOf("Kalenderwoche:")+14));
 
 
-    for( var i = 0,  temp = rawWeeksTxt.split(",");i < temp.length; i++){ // if there are multiple weeks in single page
+    for( let i = 0,  temp = rawWeeksTxt.split(",");i < temp.length; i++){ // if there are multiple weeks in single page
         if(temp[i].indexOf("-") != -1) {
-            var temp2 = temp[i].split("-");
-            var from = temp2[0].trim();
-            var to = temp2[1].trim();
+            let temp2 = temp[i].split("-");
+            let from = temp2[0].trim();
+            let to = temp2[1].trim();
 
 
 
-            for (var j = 0; j <=(to - from); j++) {
+            for (let j = 0; j <=(to - from); j++) {
                 weeks.push(Number(from) + j);
             }
 
@@ -162,11 +162,11 @@ function getCalWeeks(txt){
 
 // once a class is found on calendar page the getClassDetails method utilizes x,y positions and reads the text
 function getClassDetails(txt, x1, x2, y1, y2){
-    var extTxt;
+    let extTxt;
 
-    var classDetail = ["",""];
+    let classDetail = ["",""];
 
-    for(var i=0, n= txt.length; i< n;i++){
+    for(let i=0, n= txt.length; i< n;i++){
         if(( Number(txt[i].y + 0.2) >= y1) && (Number(txt[i].y +0.128) <= y2) && (txt[i].x >= x1) && ( txt[i].x <= x2)){
 
             if( Number(txt[i].R[0].T) != 0) {
@@ -192,9 +192,9 @@ function getClassDetails(txt, x1, x2, y1, y2){
 function getNumberOfWeekDays(lines) {
 
 
-    var days = 1;
+    let days = 1;
 
-    for (var k = 0; k < lines.length - 2; k++) {
+    for (let k = 0; k < lines.length - 2; k++) {
         if (lines[k].y > 3.3) {//checks if lines relates to day row and does goes to null in vlines
             if (lines[k].y < lines[k + 1].y) {
                 days++;
@@ -203,12 +203,13 @@ function getNumberOfWeekDays(lines) {
     }
     return days;
 }
+
 //receives w as weeks number and y as year and returns starting date of the week
 function getDateOfISOWeek(w, y) {
 
-    var simple = new Date(y, 0, 1 + (w - 1) * 7);
-    var dow = simple.getDay();
-    var ISOWeekStart = simple;
+    let simple = new Date(y, 0, 1 + (w - 1) * 7);
+    let dow = simple.getDay();
+    let ISOWeekStart = simple;
     if (dow <= 4)
         ISOWeekStart.setDate(simple.getDate() - simple.getDay() + 1);
     else
@@ -220,18 +221,22 @@ function getDateOfISOWeek(w, y) {
 
 //this method looks into calendar page and finds which year the calendar page belongs to
 function getYear(txt){
-    var extTxt;
-    var result=0;
-    for(var i=0, n= txt.length; i< n-1;i++){
+    let extTxt;
+    let result=0;
+    for(let i=0, n= txt.length; i< n-1;i++){
         if((txt[i].y > 1) && (txt[i].y < 2)){
             if(txt[i].R[0].T != null)
                 extTxt += txt[i].R[0].T;
         }
     }
     extTxt = unescape(extTxt).trim();
-    var rawWeeksTxt = extTxt.substr(extTxt.indexOf("bis:")-1,2);
+    let rawWeeksTxt = extTxt.substr(extTxt.indexOf("bis:")-1,2);
 
     result = "20" + rawWeeksTxt.trim();
     return result;
 }
+
+/* GET home page. */
+
+
 module.exports = convertPDF2JSON;

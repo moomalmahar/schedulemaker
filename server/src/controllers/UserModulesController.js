@@ -17,7 +17,7 @@ module.exports = {
                 .map(module => module.toJSON())
                 .map(module => _.extend(
                     {},
-                    module
+                    module.Module
                 ))
             res.send(modules)
         } catch (err) {

@@ -7,11 +7,17 @@ import { sync } from 'vuex-router-sync'
 import store from '@/store/store'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
+import FullCalendar from 'vue-full-calendar'
+import "fullcalendar/dist/fullcalendar.min.css";
 
-Vue.config.productionTip = false
+
 
 sync(store, router)
-Vue.use(Vuetify);
+Vue.use(Vuetify)
+Vue.use(FullCalendar)
+Vue.config.productionTip = false
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

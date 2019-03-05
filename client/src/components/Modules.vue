@@ -6,8 +6,7 @@
           <v-data-table
             :headers="headers"
             :items="modules"
-            class="elevation-1 mt-4 mb-4"
-          >
+            class="elevation-1 mt-4 mb-4">
             <template slot="items" slot-scope="props">
               <td v-if="props.item.isMyModule[0]" >
               <v-flex xs12 sm3><v-btn @click="removeCourse(props.item.id)" flat icon color="red"><v-icon>delete</v-icon></v-btn></v-flex>
@@ -15,7 +14,7 @@
               <td v-else >
                 <v-flex xs12 sm3><v-btn @click="addToCourse(props.item.id)" flat icon color="green"><v-icon>note_add</v-icon></v-btn></v-flex>
               </td>
-              <td >{{ props.item.moduleID }}</td>
+              <td>{{ props.item.moduleID }}</td>
               <td class="text-xs-right">{{ props.item.moduleName }}</td>
               <td class="text-xs-right">{{ props.item.moduleSemesterOffered }}</td>
               <td class="text-xs-right">{{ props.item.moduleECTS }}</td>
