@@ -8,7 +8,7 @@ module.exports = {
             res.send(schedules)
         } catch (err) {
             res.status(500).send({
-                error: 'Could not get modules'
+                error: 'Could not get schedules'
             })
         }
     }

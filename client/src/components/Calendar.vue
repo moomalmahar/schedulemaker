@@ -1,24 +1,32 @@
 <template>
   <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
-      <v-flex mt-5  xs12>
-        <full-calendar :config="config" :events="events"/>
+      <v-flex mt-5 xs12>
+        <div>
+          <v-layout row justify-center>
+            <full-calendar @event-selected="eventClick":config="config" :events="events" ref="calendar"/>
+          </v-layout>
+        </div>
       </v-flex>
     </v-layout>
   </v-container>
 </template>
 
-
 <script>
   import SchedulesService from '@/services/SchedulesService'
   import $ from 'jquery'
+
   export default {
-    name: 'hello',
-    data () {
+    data() {
       return {
+        dialog: false,
+        notifications: false,
+        sound: true,
+        widgets: false,
         events: [],
-        modules:[],
+        modules: [],
         config: {
+          minTime: "07:00:00",
           header: {
             left: 'prev,next today',
             center: 'title',
@@ -28,45 +36,46 @@
             listWeek: 'week',
             listDay: 'day'
           },
-          views: {
-            agenda: {
-              eventLimit: 2 // adjust to 6 only for agendaWeek/agendaDay
-            }
-          },
-          defaultView: 'month',
-          eventRender: function(event, element) {
-          //  console.log(event)
-          },
-          eventClick: function(calEvent, jsEvent, view) {
-
-            console.log('Event: ' + calEvent.detail);
-           // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-           // alert('View: ' + view.name);
-
-            // change the border color just for fun
-            $(this).css('border-color', 'red');
-          }
+          defaultView: 'month'
         },
       }
-    }, async mounted () {
-      // request the backend for all the songs
+    }, async mounted() {
+      // request the backend for all the schedules
       this.modules = (await SchedulesService.index()).data
       // console.log(this.modules[0].moduleCode)
-      for (let i =0;i<this.modules.length;i++){
-        this.events.push ({
-          start : this.modules[i].moduleStart,
-          end : this.modules[i].moduleEnd,
-          title : this.modules[i].moduleCode + "-" + this.modules[i].moduleTitle,
-          allDay : false,
+      for (let i = 0; i < this.modules.length; i++) {
+        this.events.push({
+          start: this.modules[i].moduleStart,
+          end: this.modules[i].moduleEnd,
+          title: this.modules[i].moduleCode + "-" + this.modules[i].moduleTitle,
+          allDay: false,
           selectable: true,
-          detail: 'hey'
+          detail: this.modules[i].moduleUniversity
         })
       }
-   //   console.log(this.events)
+      // console.log(this.events)
+    },
+    methods: {
+      eventClick: function (calEvent, jsEvent, view) {
+
+        console.log(new Date(calEvent.start._i));
+
+       //  console.log('End: ' + calEvent.end._i);
+
+
+        //window.open("/modules?date="+calEvent.start._i+"&end="+calEvent.end._i+"&location="+calEvent.detail);
+        let routeData =  this.$router.resolve({
+          name: 'module-view',
+          params: {
+            start: calEvent.start._i,
+            end: calEvent.end._i,
+            location: calEvent.detail }
+        })
+        window.open(routeData.href, '_blank');
+      }
     }
   }
 </script>
-
 <style scoped>
 
 </style>
