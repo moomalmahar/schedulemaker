@@ -4,9 +4,7 @@ const client = createClient(nahshProfile, 'my-awesome-program')
 let moment = require('moment');
 
 
-
 module.exports = {
-
     async post(req, res) {
         let names = []
         let alllocations = []
@@ -24,6 +22,11 @@ module.exports = {
                 let arrivalTime = moment(req.body.arrival, 'YYYY-MM-DD HH:mm').format()
                 client.journeys(dest, '9049033', {arrival: arrivalTime})
                     .then((journeys) => {
+                        alljourneys.push({
+                            date: moment(arrivalTime).format('ddd')
+                                + ', ' +
+                                moment(arrivalTime).format('MMMM Do YYYY'),
+                        })
                         getJourneys(journeys, res, alljourneys)
                     })
                     .catch(console.error)
@@ -59,8 +62,8 @@ function getJourneys(journeys, res, alljourneys) {
             }
             oneleg.push({
                 destination: journeys[i].legs[j].destination.name,
-                arrival: journeys[i].legs[j].arrival,
-                departure: journeys[i].legs[j].departure,
+                arrival: moment(journeys[i].legs[j].arrival).format('LT'),
+                departure: moment(journeys[i].legs[j].departure).format('LT'),
                 mode: mode
             })
         }
@@ -68,6 +71,7 @@ function getJourneys(journeys, res, alljourneys) {
     }
     res.send(alljourneys)
 }
+
 function getLocation(locations, res, alllocations) {
     for (let i = 0; i < locations.length; i++) {
         if (locations[i].type === 'location') {
@@ -78,7 +82,8 @@ function getLocation(locations, res, alllocations) {
     names = alllocations.filter(e => e)
     res.send(JSON.stringify(names))
 }
-function getNearby(nearby, res,names){
+
+function getNearby(nearby, res, names) {
     for (let i = 0; i < nearby.length; i++) {
         names[i] = nearby[i]
     }
