@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb286953-86a1-4cc1-bfb8-fd98d832463b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/components/ModuleDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ModuleDetail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Panel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Panel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/JourneysController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/JourneysController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Calendar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Calendar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Modules.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Modules.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/UserModules.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/UserModules.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controllers/ModulesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/ModulesController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controllers/SchedulesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/SchedulesController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controllers/UserModulesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/UserModulesController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/models/Departments.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/models/ModuleDepartments.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/models/Modules.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/Modules.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/models/Schedules.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/Schedules.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,39 +29,43 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Calendar.vue">
+        <entry file="file://$PROJECT_DIR$/client/src/components/UserModules.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="69" column="25" lean-forward="true" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+            <state relative-caret-position="-17">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/components/ModuleDetail.vue">
+        <entry file="file://$PROJECT_DIR$/server/src/controllers/UserModulesController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="43" column="91" selection-start-line="43" selection-start-column="91" selection-end-line="43" selection-end-column="91" />
+            <state relative-caret-position="240">
+              <caret line="106" column="49" lean-forward="true" selection-start-line="106" selection-start-column="49" selection-end-line="106" selection-end-column="49" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#span#0;n#v-list-tile-content#0;n#v-list-tile#0;n#v-list#0;n#v-card#0;n#panel#0;n#v-flex#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#v-dialog#0;n#v-flex#0;n#v-layout#0;n#template#0;n#!!top" />
-                <element signature="e#2460#2489#0" expanded="true" />
-                <element signature="e#3566#3791#0" />
-                <element signature="e#3828#4089#0" />
-                <element signature="e#4121#4378#0" />
-                <element signature="e#4409#4628#0" />
-                <element signature="e#4659#4912#0" />
-                <element signature="e#4940#5173#0" />
+                <element signature="e#346#967#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Panel.vue">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Header.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+            <state relative-caret-position="221">
+              <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/router/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,8 +75,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -71,6 +86,7 @@
       <find>age</find>
       <find>booy</find>
       <find>dialog</find>
+      <find>date</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -103,26 +119,31 @@
         <option value="$PROJECT_DIR$/client/src/components/HelloWorld.vue" />
         <option value="$PROJECT_DIR$/client/package.json" />
         <option value="$PROJECT_DIR$/client/src/App.vue" />
-        <option value="$PROJECT_DIR$/server/src/controllers/ModulesController.js" />
         <option value="$PROJECT_DIR$/client/src/services/UserModulesService.js" />
         <option value="$PROJECT_DIR$/server/src/controllers/RefineJSON.js" />
-        <option value="$PROJECT_DIR$/server/src/models/Modules.js" />
-        <option value="$PROJECT_DIR$/server/src/controllers/UserModulesController.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Modules.vue" />
-        <option value="$PROJECT_DIR$/client/src/components/Header.vue" />
-        <option value="$PROJECT_DIR$/client/src/components/UserModules.vue" />
-        <option value="$PROJECT_DIR$/server/src/models/Schedules.js" />
         <option value="$PROJECT_DIR$/client/src/services/SchedulesService.js" />
         <option value="$PROJECT_DIR$/client/src/main.js" />
-        <option value="$PROJECT_DIR$/server/src/controllers/SchedulesController.js" />
         <option value="$PROJECT_DIR$/server/package.json" />
         <option value="$PROJECT_DIR$/client/src/router/index.js" />
         <option value="$PROJECT_DIR$/server/src/routes.js" />
         <option value="$PROJECT_DIR$/client/src/services/JourneysService.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Calendar.vue" />
         <option value="$PROJECT_DIR$/client/src/components/Panel.vue" />
         <option value="$PROJECT_DIR$/server/src/controllers/JourneysController.js" />
         <option value="$PROJECT_DIR$/client/src/components/ModuleDetail.vue" />
+        <option value="$PROJECT_DIR$/client/src/components/Calendar.vue" />
+        <option value="$PROJECT_DIR$/server/src/controllers/RefinePdfToJson.js" />
+        <option value="$PROJECT_DIR$/server/src/controllers/RefinePdfToJson" />
+        <option value="$PROJECT_DIR$/server/src/pdfs/h.json" />
+        <option value="$PROJECT_DIR$/server/src/models/shsja.json" />
+        <option value="$PROJECT_DIR$/server/src/models/UserModulesSchedules.js" />
+        <option value="$PROJECT_DIR$/server/src/models/Schedules.js" />
+        <option value="$PROJECT_DIR$/server/src/controllers/ModulesController.js" />
+        <option value="$PROJECT_DIR$/server/src/models/Modules.js" />
+        <option value="$PROJECT_DIR$/client/src/components/UserModules.vue" />
+        <option value="$PROJECT_DIR$/server/src/controllers/SchedulesController.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Header.vue" />
+        <option value="$PROJECT_DIR$/client/src/components/Modules.vue" />
+        <option value="$PROJECT_DIR$/server/src/controllers/UserModulesController.js" />
       </list>
     </option>
   </component>
@@ -140,6 +161,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -197,32 +219,38 @@
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="controllers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
+            <path>
+              <item name="schedulemaker" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\Momal\WebstormProjects\schedulemaker" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="models" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/services" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/models" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Momal\WebstormProjects\schedulemaker\server\src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Momal\WebstormProjects\schedulemaker\server\src\models" />
       <recent name="C:\Users\Momal\WebstormProjects\schedulemaker\client\src\services" />
       <recent name="C:\Users\Momal\WebstormProjects\schedulemaker\server\src\controllers" />
       <recent name="C:\Users\Momal\WebstormProjects\schedulemaker\client\src\components" />
-      <recent name="C:\Users\Momal\WebstormProjects\schedulemaker\server\src\models" />
       <recent name="C:\Users\Momal\WebstormProjects\schedulemaker\server\src\pdfs" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Momal\WebstormProjects\schedulemaker\server\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -263,18 +291,22 @@
       <workItem from="1554105113336" duration="2545000" />
       <workItem from="1554141508149" duration="2392000" />
       <workItem from="1555177616985" duration="9643000" />
-      <workItem from="1555749660390" duration="36618000" />
+      <workItem from="1555749660390" duration="41482000" />
+      <workItem from="1555918048821" duration="4151000" />
+      <workItem from="1555957783630" duration="27000" />
+      <workItem from="1556029492543" duration="688000" />
+      <workItem from="1556870468280" duration="53597000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222973000" />
+    <option name="totallyTimeSpent" value="286300000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.203125" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -286,7 +318,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4985119" weight="0.28968903" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4985119" weight="0.2618658" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5014881" side_tool="true" weight="0.28968903" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -297,19 +329,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/NodeJS/lib/NodeJS.jar!/com/jetbrains/nodejs/packageJson/packageJsonSchema.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/node_modules/nodemon/bin/nodemon.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/policies/AuthenticationControllerPolicy.js" />
-    <entry file="file://$PROJECT_DIR$/server/src/controllers/AuthenticationController.js" />
-    <entry file="file://$PROJECT_DIR$/client/src/components/Login.vue" />
     <entry file="file://$PROJECT_DIR$/client/src/services/AuthenticationService.js" />
     <entry file="file://$PROJECT_DIR$/client/src/store/store.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -347,20 +366,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/models/Departments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/models/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
@@ -413,41 +418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/models/Modules.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/models/ModuleDepartments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/models/UserModules.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/services/UserModulesService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/UserModules.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="25" selection-start-line="1" selection-start-column="2" selection-end-line="3" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -462,51 +432,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/models/Schedules.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Header.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="7" column="92" selection-start-line="7" selection-start-column="92" selection-end-line="7" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Modules.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="38" column="4" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="60" selection-end-column="6" />
-          <folding>
-            <element signature="e#1295#1349#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/controllers/SchedulesController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/controllers/ModulesController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/controllers/UserModulesController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="46" lean-forward="true" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -538,16 +463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
@@ -562,28 +477,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Calendar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="69" column="25" lean-forward="true" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/controllers/JourneysController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!block;n#getLocation#0" />
-            <element signature="n#!!block;n#getNearby#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/ModuleDetail.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="43" column="91" selection-start-line="43" selection-start-column="91" selection-end-line="43" selection-end-column="91" />
+        <state relative-caret-position="600">
+          <caret line="42" column="22" lean-forward="true" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#span#0;n#span#0;n#v-list-tile-content#0;n#v-list-tile#0;n#v-list#0;n#v-card#0;n#panel#0;n#v-flex#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#v-dialog#0;n#v-flex#0;n#v-layout#0;n#template#0;n#!!top" />
@@ -594,6 +491,151 @@
             <element signature="e#4409#4628#0" />
             <element signature="e#4659#4912#0" />
             <element signature="e#4940#5173#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/controllers/RefinePdfToJson.js" />
+    <entry file="file://$PROJECT_DIR$/server/src/controllers/RefinePdfToJson" />
+    <entry file="file://$PROJECT_DIR$/server/src/pdfs/h.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="1450" column="1" selection-end-line="1450" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/models/Departments.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/models/ModuleDepartments.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/models/shsja.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="128747" column="39" lean-forward="true" selection-start-line="128747" selection-start-column="39" selection-end-line="128747" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/models/UserModulesSchedules.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/models/Schedules.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/controllers/JourneysController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="794">
+          <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!block;n#getLocation#0" />
+            <element signature="n#!!block;n#getNearby#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/models/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/models/Modules.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/models/UserModules.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="44" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Calendar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="46" column="40" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/controllers/SchedulesController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/controllers/ModulesController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/services/UserModulesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="38" lean-forward="true" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Header.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Modules.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="88" column="7" lean-forward="true" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/UserModules.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/controllers/UserModulesController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="106" column="49" lean-forward="true" selection-start-line="106" selection-start-column="49" selection-end-line="106" selection-end-column="49" />
+          <folding>
+            <element signature="e#346#967#0" />
           </folding>
         </state>
       </provider>

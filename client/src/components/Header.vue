@@ -7,7 +7,7 @@
     <v-spacer></v-spacer>
     <v-toolbar-items><v-btn v-if="!$store.state.isUserLoggedIn" flat dark router to="modules">Modules</v-btn></v-toolbar-items>
     <v-toolbar-items><v-btn v-if="!$store.state.isUserLoggedIn" flat dark router to="mymodules">My Modules</v-btn></v-toolbar-items>
-    <v-toolbar-items><v-btn v-if="$store.state.isUserLoggedIn" flat dark @click="logout" >Log Out</v-btn></v-toolbar-items>
+    <v-toolbar-items><v-btn  flat dark router to="calendar" >calendar</v-btn></v-toolbar-items>
   </v-toolbar>
 </template>
 

@@ -14,8 +14,6 @@
 
 <script>
   import SchedulesService from '@/services/SchedulesService'
-  import $ from 'jquery'
-
   export default {
     data() {
       return {
@@ -57,13 +55,7 @@
     },
     methods: {
       eventClick: function (calEvent, jsEvent, view) {
-
         console.log(new Date(calEvent.start._i));
-
-       //  console.log('End: ' + calEvent.end._i);
-
-
-        //window.open("/modules?date="+calEvent.start._i+"&end="+calEvent.end._i+"&location="+calEvent.detail);
         let routeData =  this.$router.resolve({
           name: 'module-view',
           params: {

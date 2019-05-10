@@ -2,6 +2,13 @@
   <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
       <v-flex mt-5  xs12>
+        <div v-if="this.clash.length > 0" >
+          <v-alert  :value="true" type="warning">
+            You have {{this.clash.length}} schedule clash(es)
+          </v-alert>
+          <!--<ul v-for="(item, index) in this.clash">
+          </ul>-->
+        </div>
         <panel  title="Modules">
           <v-data-table
             :headers="headers"
@@ -14,12 +21,8 @@
               <td v-else >
                 <v-flex xs12 sm3><v-btn @click="addToCourse(props.item.id)" flat icon color="green"><v-icon>note_add</v-icon></v-btn></v-flex>
               </td>
-              <td>{{ props.item.moduleID }}</td>
-              <td class="text-xs-right">{{ props.item.moduleName }}</td>
-              <td class="text-xs-right">{{ props.item.moduleSemesterOffered }}</td>
-              <td class="text-xs-right">{{ props.item.moduleECTS }}</td>
-              <td class="text-xs-right">{{ props.item.moduleDepartment }}</td>
-              <td class="text-xs-right">{{ props.item.moduleLocation }}</td>
+              <td>{{ props.item.moduleCode }}</td>
+              <td class="text-xs-right">{{ props.item.moduleTitle }}</td>
             </template>
           </v-data-table>
         </panel>
@@ -39,6 +42,7 @@
     data () {
       return {
         modules: [],
+        clash: '',
         headers: [
           {
             align: 'left',
@@ -49,19 +53,16 @@
             text: 'Module Code',
             align: 'left',
             sortable: false,
-            value: 'moduleID'
+            value: 'moduleCode'
           },
-          { text: 'Module Title', value: 'moduleName' },
-          { text: 'Offered Semester', value: 'moduleSemesterOffered' },
-          { text: 'ECTS', value: 'moduleECTS' },
-          { text: 'Department ', value: 'moduleDepartment' },
-          { text: 'Location', value: 'moduleLocation' }
+          { text: 'Module Title', value: 'moduleCode' },
         ]
       }
     },
     async mounted () {
       // request the backend for all the songs
       this.modules = (await ModulesService.index()).data
+
     },
     methods: {
       async addToCourse (id) {
@@ -71,14 +72,18 @@
             UserId: 1
           })
           this.modules = (await ModulesService.index()).data
+          console.log(response.data)
+          this.clash = response.data
         } catch (error) {
           this.error = error.response.data.error
         }
       },
     async removeCourse (id) {
       try {
-        await UserModulesService.delete(id)
+         const response = await UserModulesService.delete(id)
         this.modules = (await ModulesService.index()).data
+        console.log(response.data)
+        this.clash = response.data
       } catch (err) {
         console.log(err)
       }

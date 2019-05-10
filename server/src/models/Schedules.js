@@ -8,9 +8,9 @@ module.exports = (sequelize, DataTypes) => {
         moduleUniversity: DataTypes.STRING
     })
 
-    Schedules.associate = function (models) {
+    /*Schedules.associate = function (models) {
         Schedules.belongsTo(models.Modules)
-    }
+    }*/
 
     return Schedules
 }

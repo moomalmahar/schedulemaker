@@ -19,6 +19,7 @@
     "node": "^11.8.0",
     "nodemon": "^1.18.9",
     "pdf2json": "^1.1.8",
+    "save": "^2.3.3",
     "sequelize": "^4.42.0"
   },
   "devDependencies": {},

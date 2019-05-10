@@ -24,12 +24,8 @@
                 <td hide-details >
                   <v-flex xs12 sm3><v-btn @click="removeCourse(props.item.id)" flat icon color="red"><v-icon>delete</v-icon></v-btn></v-flex>
                 </td>
-                <td class="text-xs-right">{{ props.item.moduleID }}</td>
-                <td class="text-xs-right">{{ props.item.moduleName }}</td>
-                <td class="text-xs-right">{{ props.item.moduleSemesterOffered }}</td>
-                <td class="text-xs-right">{{ props.item.moduleECTS }}</td>
-                <td class="text-xs-right">{{ props.item.moduleDepartment }}</td>
-                <td class="text-xs-right">{{ props.item.moduleLocation }}</td>
+                <td class="text-xs-right">{{ props.item.moduleCode }}</td>
+                <td class="text-xs-right">{{ props.item.moduleTitle }}</td>
 
               </template>
               <v-alert slot="no-results" :value="true" color="error" icon="warning">
@@ -61,12 +57,8 @@
         },
         headers: [
           {text: '', value: '',sortable: false},
-          {text: 'Module Code', value: 'moduleID',sortable: false},
-          {text: 'Module Name', value: 'moduleName'},
-          {text: 'Semester Offered', value: 'moduleSemesterOffered'},
-          {text: 'ECTS', value: 'moduleECTS'},
-          {text: 'Department', value: 'moduleDepartment'},
-          {text: 'Offered At', value: 'moduleLocation'}
+          {text: 'Module Code', value: 'moduleCode',sortable: false},
+          {text: 'Module Title', value: 'moduleTitle'},
         ]
       }
 
