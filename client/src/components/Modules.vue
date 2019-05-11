@@ -2,6 +2,13 @@
   <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
       <v-flex mt-5  xs12>
+        <div v-if="this.locationclash.length > 0" >
+          <v-alert  :value="true" type="info">
+            You have {{this.locationclash.length}} location clash(es)
+          </v-alert>
+          <!--<ul v-for="(item, index) in this.clash">
+          </ul>-->
+        </div>
         <div v-if="this.clash.length > 0" >
           <v-alert  :value="true" type="warning">
             You have {{this.clash.length}} schedule clash(es)
@@ -43,6 +50,7 @@
       return {
         modules: [],
         clash: '',
+        locationclash: '',
         headers: [
           {
             align: 'left',
@@ -73,7 +81,8 @@
           })
           this.modules = (await ModulesService.index()).data
           console.log(response.data)
-          this.clash = response.data
+          this.clash = response.data.clashes
+          this.locationclash = response.data.locationclashes
         } catch (error) {
           this.error = error.response.data.error
         }
@@ -83,7 +92,8 @@
          const response = await UserModulesService.delete(id)
         this.modules = (await ModulesService.index()).data
         console.log(response.data)
-        this.clash = response.data
+        this.clash = response.data.clashes
+        this.locationclash = response.data.locationclashes
       } catch (err) {
         console.log(err)
       }

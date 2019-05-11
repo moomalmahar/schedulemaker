@@ -19,7 +19,6 @@ module.exports = {
                 { type: sequelize.QueryTypes.SELECT})
                 .then(modules => {
                     // We don't need spread here, since only the results will be returned for select queries
-                    console.log('hey   -----------------    ', modules)
                     schedules = modules
                 })
             res.send(schedules)
