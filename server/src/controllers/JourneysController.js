@@ -18,9 +18,14 @@ module.exports = {
                     .catch(console.error)
             } else if (req.body.id) {
                 let alljourneys = []
-                let dest = req.body.id.toString()
+                let destination = '9049033'
+                let departure = req.body.id.toString()
                 let arrivalTime = moment(req.body.arrival, 'YYYY-MM-DD HH:mm').format()
-                client.journeys(dest, '9049033', {arrival: arrivalTime})
+                if(req.body.destination === 'CAU'){
+                   destination = '9049283'
+                }
+                    // 9049283
+                client.journeys(departure, destination, {arrival: arrivalTime})
                     .then((journeys) => {
                         alljourneys.push({
                             date: moment(arrivalTime).format('ddd')

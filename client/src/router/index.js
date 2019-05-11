@@ -4,7 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Modules from '@/components/Modules'
 import UserModules from '@/components/UserModules'
 import Calendar from '@/components/Calendar'
-import ModuleDetail from '@/components/ModuleDetail'
+import JourneySearch from '@/components/JourneySearch'
 
 Vue.use(Router)
 
@@ -33,7 +33,7 @@ export default new Router({
     {
       path: '/journey/:start/:end/:location',
       name: 'module-view',
-      component: ModuleDetail
+      component: JourneySearch
     },
     {
       path: '*',

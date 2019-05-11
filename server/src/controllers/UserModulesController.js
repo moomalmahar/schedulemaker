@@ -15,6 +15,8 @@ const sequelize = new Sequelize(
 
 module.exports = {
     async index(req, res) {
+        let getclassclashes = []
+        let getlocationclashes = []
         try {
             const modules = await UserModules.findAll({
                 where: {
@@ -34,19 +36,49 @@ module.exports = {
 
 
             // TODO: ---------- getting class clashes from database
-              const getclassclashes = await ClassClashes.findAll({
-                  where: {
-                      UserId: 1
-                  }
-              })
+            let tempgetclassclashes = await ClassClashes.findAll({
+                where: {
+                    UserId: 1
+                }
+            })
 
-              // TODO: ---------- getting location clashes from database
-              const getlocationclashes = await LocationClashes.findAll({
-                  where: {
-                      UserId: 1
-                  }
-              })
+            // TODO: ---------- getting location clashes from database
+            let tempgetlocationclashes = await LocationClashes.findAll({
+                where: {
+                    UserId: 1
+                }
+            })
 
+
+
+            for (let i = 0; i < tempgetclassclashes.length; i++) {
+                getclassclashes.push({
+                    clashWithStart: moment(tempgetclassclashes[i].clashWithStart).format('MMMM Do YYYY') + ', '
+                    + moment(tempgetclassclashes[i].clashWithStart).format('HH:mm'),
+                    clashWithCode: tempgetclassclashes[i].clashWithCode,
+                    clashWithTitle: tempgetclassclashes[i].clashWithTitle,
+                    moduleStart: moment(tempgetclassclashes[i].moduleStart).format('MMMM Do YYYY') + ', '
+                        + moment(tempgetclassclashes[i].moduleStart).format('HH:mm'),
+                    moduleTitle: tempgetclassclashes[i].moduleTitle,
+                    moduleCode: tempgetclassclashes[i].moduleCode
+                })
+            }
+
+           for (let i = 0; i < tempgetlocationclashes.length; i++) {
+                getlocationclashes.push({
+                    clashWithStart: moment(tempgetlocationclashes[i].clashWithStart).format('MMMM Do YYYY') + ', '
+                        + moment(tempgetlocationclashes[i].clashWithStart).format('HH:mm'),
+                    clashWithCode: tempgetlocationclashes[i].clashWithCode,
+                    clashWithTitle: tempgetlocationclashes[i].clashWithTitle,
+                    moduleClashEnd: moment(tempgetlocationclashes[i].moduleClashEnd).format('MMMM Do YYYY') + ', '
+                        + moment(tempgetlocationclashes[i].moduleClashEnd).format('HH:mm'),
+                    moduleTitle: tempgetlocationclashes[i].moduleTitle,
+                    moduleCode: tempgetlocationclashes[i].moduleCode,
+                    departureUniversity: tempgetlocationclashes[i].departureUniversity,
+                    destinationUniversity: tempgetlocationclashes[i].destinationUniversity,
+                    timeDifference: tempgetlocationclashes[i].timeDifference
+                })
+            }
 
             res.send({
                 modules: modules,

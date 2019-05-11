@@ -99,7 +99,8 @@
         },
         searchid: {
           id: '',
-          arrival: ''
+          arrival: '',
+          destination: '',
         },
         journeys: [],
         smallarray: {
@@ -185,6 +186,7 @@
         try {
           this.searchid.id = this.id
           this.searchid.arrival = this.start
+          this.searchid.destination = this.location
           this.journeys = (await Journey.post(this.searchid)).data
           this.date = this.journeys[0].date
         } catch (err) {

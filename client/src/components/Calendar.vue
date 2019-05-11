@@ -1,11 +1,9 @@
 <template>
-  <v-container grid-list-md text-xs-center>
+  <v-container grid-list-md>
     <v-layout row wrap>
       <v-flex mt-5 xs12>
         <div>
-          <v-layout row justify-center>
-            <full-calendar @event-selected="eventClick":config="config" :events="events" ref="calendar"/>
-          </v-layout>
+            <full-calendar  @event-selected="eventClick":config="config" :events="events" ref="calendar"/>
         </div>
       </v-flex>
     </v-layout>
@@ -30,11 +28,12 @@
             center: 'title',
             right: 'month,listWeek,listDay'
           },
+          height: "auto",
           buttonText: {
             listWeek: 'week',
             listDay: 'day'
           },
-          defaultView: 'month'
+          defaultView: 'listWeek'
         },
       }
     }, async mounted() {
@@ -45,7 +44,7 @@
         this.events.push({
           start: this.modules[i].moduleStart,
           end: this.modules[i].moduleEnd,
-          title: this.modules[i].moduleCode + "-" + this.modules[i].moduleTitle,
+          title: this.modules[i].moduleTitle,
           allDay: false,
           selectable: true,
           detail: this.modules[i].moduleUniversity
