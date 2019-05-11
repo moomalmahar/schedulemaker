@@ -1,8 +1,9 @@
 let moment = require('moment');
 
-const {UserModules, Modules} = require('../models')
+const {UserModules, Modules, ClassClashes, LocationClashes} = require('../models')
 const _ = require('lodash')
 const Sequelize = require('sequelize')
+const Op = Sequelize.Op
 const config = require('../config/config')
 const db = {}
 const sequelize = new Sequelize(
@@ -11,8 +12,7 @@ const sequelize = new Sequelize(
     config.db.password,
     config.db.options
 )
-let clashes = []
-let locactionclashes = []
+
 module.exports = {
     async index(req, res) {
         try {
@@ -31,7 +31,28 @@ module.exports = {
                     {},
                     module.Module
                 ))
-            res.send(modules)
+
+
+            // TODO: ---------- getting class clashes from database
+              const getclassclashes = await ClassClashes.findAll({
+                  where: {
+                      UserId: 1
+                  }
+              })
+
+              // TODO: ---------- getting location clashes from database
+              const getlocationclashes = await LocationClashes.findAll({
+                  where: {
+                      UserId: 1
+                  }
+              })
+
+
+            res.send({
+                modules: modules,
+                clashes: getclassclashes,
+                locationclashes: getlocationclashes
+            })
         } catch (err) {
             res.status(500).send({
                 error: 'Could not get modules'
@@ -39,6 +60,8 @@ module.exports = {
         }
     },
     async post(req, res) {
+        let clashes = []
+        let locactionclashes = []
         try {
             let prevschedules = []
             let newschedules = []
@@ -75,10 +98,13 @@ module.exports = {
                     if ((newschedules[i].start >= prevschedules[j].modulesstart && newschedules[i].start <= prevschedules[j].modulesend)
                         || (newschedules[i].end >= prevschedules[j].modulesstart && newschedules[i].end <= prevschedules[j].modulesend)) {
                         clashes.push({
-                            clashwith: newschedules[i].modulescode,
-                            title: prevschedules[j].modulestitle,
-                            code: prevschedules[j].modulescode,
-                            start: prevschedules[j].modulesstart
+                            clashWithStart: newschedules[i].start,
+                            clashWithCode: newschedules[i].modulescode,
+                            clashWithTitle: newschedules[i].moduletitle,
+                            moduleTitle: prevschedules[j].modulestitle,
+                            moduleCode: prevschedules[j].modulescode,
+                            moduleStart: prevschedules[j].modulesstart,
+                            UserId: 1
                         })
                     }
                 }
@@ -92,8 +118,6 @@ module.exports = {
                     let prevstart = moment(new Date(prevschedules[j].modulesstart), "DD/MM/YYYY").format('DD/MM/YYYY HH:mm:ss')
                     let newstart = moment(new Date(newschedules[i].start), "DD/MM/YYYY").format('DD/MM/YYYY HH:mm:ss')
                     let prevend = moment(new Date(prevschedules[j].modulesend), "DD/MM/YYYY").format('DD/MM/YYYY HH:mm:ss')
-
-                    // -------- for the other way around
                     let nexta = moment(new Date(newschedules[i].end), "DD/MM/YYYY").format('DD/MM/YYYY')
                     let preva = moment(new Date(prevschedules[j].modulesstart), "DD/MM/YYYY").format('DD/MM/YYYY')
 
@@ -102,35 +126,45 @@ module.exports = {
                     if ((prevstart > newend)) {
                         timenext = moment.utc(moment(new Date(prevschedules[j].modulesstart), "DD/MM/YYYY HH:mm:ss")
                             .diff(moment(new Date(newschedules[i].end), "DD/MM/YYYY HH:mm:ss"))).format("HH:mm:ss")
-                    }
-                    else if(prevend < newstart){
+                    } else if (prevend < newstart) {
                         timenext = moment.utc(moment(new Date(newschedules[i].start), "DD/MM/YYYY HH:mm:ss")
-                            .diff(moment(new Date(  prevschedules[j].modulesend), "DD/MM/YYYY HH:mm:ss"))).format("HH:mm:ss")
+                            .diff(moment(new Date(prevschedules[j].modulesend), "DD/MM/YYYY HH:mm:ss"))).format("HH:mm:ss")
                     }
 
                     let difference = moment.duration(timenext).asMinutes()
-
-                      if ((difference > 0 && difference < 45) && (prevschedules[j].moduleuni !== newschedules[i].moduleuni)
-                          && (nexta === preva)) {
-                          locactionclashes.push({
-                              clashwith: newschedules[i].modulescode,
-                              code: prevschedules[j].modulescode,
-                              moduletitle: prevschedules[j].modulestitle,
-                              departure: prevschedules[j].moduleuni,
-                              destination: newschedules[i].moduleuni,
-                              prevclasstime: prevschedules[j].modulesend,
-                              nextclassstart: newschedules[i].start,
-                              timedifference: difference,
-                              clashmodule: newschedules[i].moduletitle
-                          })
-                      }
+                    if ((difference > 0 && difference < 45) && (prevschedules[j].moduleuni !== newschedules[i].moduleuni)
+                        && (nexta === preva)) {
+                        locactionclashes.push({
+                            clashWithStart: newschedules[i].start,
+                            clashWithCode: newschedules[i].modulescode,
+                            clashWithTitle: newschedules[i].moduletitle,
+                            moduleClashEnd: prevschedules[j].modulesend,
+                            moduleTitle: prevschedules[j].modulestitle,
+                            moduleCode: prevschedules[j].modulescode,
+                            departureUniversity: prevschedules[j].moduleuni,
+                            destinationUniversity: newschedules[i].moduleuni,
+                            timeDifference: difference,
+                            UserId: 1
+                        })
+                    }
                 }
             }
+
+            // TODO: insert the class clashes into the database to retain them
+            if (clashes.length !== 0) {
+                for (let k = 0; k < clashes.length; k++) {
+                    ClassClashes.create(clashes[k])
+                }
+            }
+            // TODO: insert the location clashes into the database to retain them
+            if (locactionclashes.length !== 0) {
+                for (let k = 0; k < locactionclashes.length; k++) {
+                    LocationClashes.create(locactionclashes[k])
+                }
+            }
+
             await UserModules.create(req.body)
-            res.send({
-                clashes: clashes,
-                locationclashes: locactionclashes
-            })
+            res.send()
         } catch (err) {
             res.send({
                 error: err
@@ -156,30 +190,63 @@ module.exports = {
                     error: 'you do not have access to this module'
                 })
             }
-            let tempclashes = []
-            let templocactionclashes = []
-            for (let i = 0; i < clashes.length; i++) {
-                if ((clashes[i].code === getmodule.moduleCode) || (clashes[i].clashwith === getmodule.moduleCode)) {
-                } else {
-                    tempclashes.push(clashes[i])
+
+            // TODO: ----------------------------------------------------------------------------------
+            // TODO: Handling the clashes -------------------------------------------------------------
+
+            // TODO: ------ delete class clash from database
+            const deleteClassClash = await ClassClashes.findAll({
+                where: {
+                    [Op.or]: [
+                        {
+                            moduleCode: {
+                                [Op.eq]: getmodule.moduleCode
+                            }
+                        },
+                        {
+                            clashWithCode: {
+                                [Op.eq]: getmodule.moduleCode
+                            }
+                        }
+                    ],
+                    UserId: 1
                 }
-            }
-
-            for (let i = 0; i < locactionclashes.length; i++) {
-                if ((locactionclashes[i].code === getmodule.moduleCode) || (locactionclashes[i].clashwith === getmodule.moduleCode)) {
-                } else {
-                    templocactionclashes.push(locactionclashes[i])
-                }
-            }
-
-
-            clashes = tempclashes
-            locactionclashes = templocactionclashes
-            await module.destroy()
-            res.send({
-                clashes: clashes,
-                locationclashes: locactionclashes
             })
+
+            if (deleteClassClash.length !== 0) {
+                for (let k = 0; k < deleteClassClash.length; k++) {
+                    deleteClassClash[k].destroy()
+
+                }
+            }
+
+            // TODO: delete location clash from database
+            const deleteLocationClash = await LocationClashes.findAll({
+                where: {
+                    [Op.or]: [
+                        {
+                            moduleCode: {
+                                [Op.eq]: getmodule.moduleCode
+                            }
+                        },
+                        {
+                            clashWithCode: {
+                                [Op.eq]: getmodule.moduleCode
+                            }
+                        }
+                    ],
+                    UserId: 1
+                }
+            })
+
+            if (deleteLocationClash.length !== 0) {
+                for (let k = 0; k < deleteLocationClash.length; k++) {
+                    deleteLocationClash[k].destroy()
+                }
+            }
+
+            await module.destroy()
+            res.send()
         } catch (err) {
             res.status(500).send({
                 error: 'an error has occurred trying to delete the module from your courses'

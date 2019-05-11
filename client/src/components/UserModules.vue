@@ -65,13 +65,13 @@
     },
     async mounted() {
       // request the backend for all the songs
-      this.modules = (await UserModulesService.index()).data
+      this.modules = (await UserModulesService.index()).data.modules
     },
     methods: {
       async removeCourse (id) {
         try {
           await UserModulesService.delete(id)
-          this.modules = (await UserModulesService.index()).data
+          this.modules = (await UserModulesService.index()).data.modules
         } catch (err) {
           console.log(err)
         }

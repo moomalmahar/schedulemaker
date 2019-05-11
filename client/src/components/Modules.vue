@@ -68,32 +68,32 @@
       }
     },
     async mounted () {
-      // request the backend for all the songs
+      // request the backend for all the modules and clashes
       this.modules = (await ModulesService.index()).data
-
+      this.clash = (await UserModulesService.index()).data.clashes
+      this.locationclash = (await UserModulesService.index()).data.locationclashes
     },
     methods: {
       async addToCourse (id) {
         try {
-         const response = await UserModulesService.post({
+         await UserModulesService.post({
             ModuleId: id,
             UserId: 1
           })
           this.modules = (await ModulesService.index()).data
-          console.log(response.data)
-          this.clash = response.data.clashes
-          this.locationclash = response.data.locationclashes
+
+          this.clash = (await UserModulesService.index()).data.clashes
+          this.locationclash = (await UserModulesService.index()).data.locationclashes
         } catch (error) {
           this.error = error.response.data.error
         }
       },
     async removeCourse (id) {
       try {
-         const response = await UserModulesService.delete(id)
+        await UserModulesService.delete(id)
         this.modules = (await ModulesService.index()).data
-        console.log(response.data)
-        this.clash = response.data.clashes
-        this.locationclash = response.data.locationclashes
+        console.log(this.clash)
+        this.locationclash = (await UserModulesService.index()).data.locationclashes
       } catch (err) {
         console.log(err)
       }
