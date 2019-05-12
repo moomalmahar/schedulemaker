@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb286953-86a1-4cc1-bfb8-fd98d832463b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/RefineJSON.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/RefineJSON.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/JourneySearch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/JourneySearch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Modules.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Modules.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,39 +16,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Modules.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="107" column="2" lean-forward="true" selection-start-line="107" selection-start-column="2" selection-end-line="107" selection-end-column="40" />
-              <folding>
-                <element signature="n#panel#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#template#0;n#!!top" />
-                <element signature="n#v-dialog#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#template#0;n#!!top" />
-                <element signature="n#v-dialog#1;n#v-flex#0;n#v-layout#0;n#v-container#0;n#template#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/router/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Parser.vue">
+        <entry file="file://$PROJECT_DIR$/client/src/components/JourneySearch.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            <state relative-caret-position="102">
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
               <folding>
-                <element signature="e#273#311#0" expanded="true" />
+                <element signature="n#v-card#0;n#panel#0;n#v-flex#0;n#v-layout#0;n#template#0;n#!!top" />
+                <element signature="n#style#0;n#span#0;n#span#0;n#v-list-tile-content#0;n#v-list-tile#0;n#v-list#0;n#v-card#0;n#panel#0;n#v-flex#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#v-dialog#0;n#v-flex#0;n#v-layout#0;n#template#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -125,8 +100,6 @@
         <option value="$PROJECT_DIR$/server/src/models/ClassClashes.js" />
         <option value="$PROJECT_DIR$/client/src/components/UserModules.vue" />
         <option value="$PROJECT_DIR$/server/src/controllers/UserModulesController.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Modules.vue" />
-        <option value="$PROJECT_DIR$/client/src/components/JourneySearch.vue" />
         <option value="$PROJECT_DIR$/server/src/controllers/JourneysController.js" />
         <option value="$PROJECT_DIR$/client/src/components/Calendar.vue" />
         <option value="$PROJECT_DIR$/server/src/controllers/RefineJSON.js" />
@@ -135,6 +108,8 @@
         <option value="$PROJECT_DIR$/client/src/services/ParserService.js" />
         <option value="$PROJECT_DIR$/client/src/router/index.js" />
         <option value="$PROJECT_DIR$/client/src/components/Parser.vue" />
+        <option value="$PROJECT_DIR$/client/src/components/Modules.vue" />
+        <option value="$PROJECT_DIR$/client/src/components/JourneySearch.vue" />
       </list>
     </option>
   </component>
@@ -280,12 +255,12 @@
       <workItem from="1555957783630" duration="27000" />
       <workItem from="1556029492543" duration="688000" />
       <workItem from="1556870468280" duration="73407000" />
-      <workItem from="1557572281245" duration="32959000" />
+      <workItem from="1557572281245" duration="34455000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="339069000" />
+    <option name="totallyTimeSpent" value="340565000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -553,17 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/JourneySearch.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="165" column="58" selection-start-line="165" selection-start-column="58" selection-end-line="165" selection-end-column="58" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#span#0;n#v-list-tile-content#0;n#v-list-tile#0;n#v-list#0;n#v-card#0;n#panel#0;n#v-flex#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#v-dialog#0;n#v-flex#0;n#v-layout#0;n#template#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -585,6 +549,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/controllers/RefineJSON.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1581">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Parser.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+          <folding>
+            <element signature="e#273#311#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/router/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -595,31 +576,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/controllers/RefineJSON.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1581">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Modules.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="107" column="2" lean-forward="true" selection-start-line="107" selection-start-column="2" selection-end-line="107" selection-end-column="40" />
+        <state relative-caret-position="158">
+          <caret line="209" column="31" lean-forward="true" selection-start-line="209" selection-start-column="31" selection-end-line="209" selection-end-column="31" />
           <folding>
             <element signature="n#panel#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#template#0;n#!!top" />
             <element signature="n#v-dialog#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#template#0;n#!!top" />
             <element signature="n#v-dialog#1;n#v-flex#0;n#v-layout#0;n#v-container#0;n#template#0;n#!!top" />
+            <element signature="e#3988#4042#0" expanded="true" />
+            <element signature="e#4346#4672#0" />
+            <element signature="e#4696#5264#0" />
+            <element signature="e#5291#6150#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Parser.vue">
+    <entry file="file://$PROJECT_DIR$/client/src/components/JourneySearch.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        <state relative-caret-position="102">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
           <folding>
-            <element signature="e#273#311#0" expanded="true" />
+            <element signature="n#v-card#0;n#panel#0;n#v-flex#0;n#v-layout#0;n#template#0;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#span#0;n#v-list-tile-content#0;n#v-list-tile#0;n#v-list#0;n#v-card#0;n#panel#0;n#v-flex#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#v-dialog#0;n#v-flex#0;n#v-layout#0;n#template#0;n#!!top" />
           </folding>
         </state>
       </provider>

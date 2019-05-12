@@ -4,7 +4,7 @@
       <panel>
         <v-layout align-center justify-center row fill-height>
           <v-text-field v-model="search" label="Search location here" required></v-text-field>
-          <v-btn fab dark small color="primary" @click="searchLocation()" type="info">
+          <v-btn v-if="search" fab dark small color="primary" @click="searchLocation()" type="info">
             <v-icon dark>search</v-icon>
           </v-btn>
           <v-btn fab dark small @click="getLocation()" color="black">

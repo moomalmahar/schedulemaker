@@ -203,7 +203,6 @@
       // request the backend for all the modules and clashes
       this.modules = (await ModulesService.index()).data
       this.clash = (await UserModulesService.index()).data.clashes
-      console.log(this.clash)
       this.locationclash = (await UserModulesService.index()).data.locationclashes
     },
     methods: {
