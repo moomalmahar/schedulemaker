@@ -5,6 +5,7 @@ import Modules from '@/components/Modules'
 import UserModules from '@/components/UserModules'
 import Calendar from '@/components/Calendar'
 import JourneySearch from '@/components/JourneySearch'
+import Parser from '@/components/Parser'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/journey/:start/:end/:location',
       name: 'module-view',
       component: JourneySearch
+    },
+    {
+      path: '/parser',
+      name: 'parser',
+      component: Parser
     },
     {
       path: '*',
